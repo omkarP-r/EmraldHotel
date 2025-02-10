@@ -14,7 +14,7 @@ import com.project.emrald.entity.User;
 public class Utils {
 
 	
-	public static final String ALPHANUMERIC_STRING = "ABCDEFGHIJKLMNOPWXYZ0123456789";
+	public static final String ALPHANUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	
 	public static final SecureRandom secureRandom   = new SecureRandom();
 	
