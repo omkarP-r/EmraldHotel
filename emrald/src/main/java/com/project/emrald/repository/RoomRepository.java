@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.project.emrald.entity.Room;
 
-public interface RoomRepository extends CrudRepository<Room, Long>{
+public interface RoomRepository extends JpaRepository<Room, Long>{
 
 	@Query("SELECT DISTINCT r.roomType FROM Room r")
 	List<String> findDistinctRoomTypes();
