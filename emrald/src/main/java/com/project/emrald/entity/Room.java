@@ -32,17 +32,23 @@ public class Room {
 	 
 	 private String roomDescription;
 	 
-	 @OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	 private List<Booking> bookings  = new ArrayList<>();
+	    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	    private List<Booking> bookings = new ArrayList<>();
 
-	@Override
-	public String toString() {
-		return "Room [id=" + id + ", roomType=" + roomType + ", roomPrice=" + roomPrice + ", roomPhotoUrl="
-				+ roomPhotoUrl + ", description=" + roomDescription + "]";
+	 @Override
+	    public String toString() {
+	        return "Room{" +
+	                "id=" + id +
+	                ", roomType='" + roomType + '\'' +
+	                ", roomPrice=" + roomPrice +
+	                ", roomPhotoUrl='" + roomPhotoUrl + '\'' +
+	                ", description='" + roomDescription + '\'' +
+	                '}';
+	    }
 	}
 
 
 	 
 	 
 	 
-}
+
