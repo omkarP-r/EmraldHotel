@@ -172,27 +172,26 @@ public class RoomService implements IRoomService{
 		return response;
 	}
 
-	@Override
-	public Response getAvailableRoomsByDateAndType(LocalDate checkInDate, LocalDate checkOutDate, String roomType) {
-		// TODO Auto-generated method stub
-		Response response = new Response();
-		try {
-		     
-			List<Room> availableRooms = roomRepository.findAvailableRoomsByDateAndTypes(checkInDate, checkOutDate, roomType);
-			List<RoomDTO> availableRoomsDTO = Utils.mapRoomListEntityToRoomListDTO(availableRooms);
-			response.setRoomlist(availableRoomsDTO);
-			response.setMessage("Successful");
-			response.setStatusCode(200);
-			
-			
-		}
-		
-		catch(Exception e) {
-			response.setStatusCode(500);
-			response.setMessage("Error getting room by date and Type a room "+e.getMessage());
-		}
-		return response;
-	}
+	 @Override
+	    public Response getAvailableRoomsByDateAndType(LocalDate checkInDate, LocalDate checkOutDate, String roomType) {
+	        Response response = new Response();
+
+	        try {
+	            List<Room> availableRooms = roomRepository.findAvailableRoomsByDateAndTypes(checkInDate, checkOutDate, roomType);
+	            List<RoomDTO> roomDTOList = Utils.mapRoomListEntityToRoomListDTO(availableRooms);
+
+	            response.setMessage("successful");
+	            response.setStatusCode(200);
+	            response.setRoomlist(roomDTOList);
+
+	        }catch (Exception e) {
+	            response.setStatusCode(500);
+	            response.setMessage("Error getting available rooms " + e.getMessage());
+
+	        }
+	        return response;
+	    }
+
 
 	@Override
 	public Response getAllAvailableRooms() {
